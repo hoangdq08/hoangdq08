@@ -37,9 +37,9 @@
 
 <div align="center">
 
-| ⏳ Experience | 👥 Users Served | 🏢 Companies | 🧩 Stack |
-|:------------:|:---------------:|:------------:|:--------:|
-| **5+ years** | **1.6M+** | **2** | **Web · Mobile · AI** |
+| 🚀 Projects | 👥 Users Served | ⏳ Experience | 🧩 Stack |
+|:----------:|:---------------:|:------------:|:--------:|
+| **10+** | **1.6M+** | **5+ years** | **Web · Mobile · AI** |
 
 </div>
 
