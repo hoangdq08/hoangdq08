@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/hoangdo.dev08@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
   &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=hoangdodev&style=for-the-badge&color=00ADD8&label=Views"/>
+  <img src="https://komarev.com/ghpvc/?username=hoangdq08&style=for-the-badge&color=00ADD8&label=Views"/>
 </div>
 
 <br/>
@@ -130,12 +130,12 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=hoangdodev&show_icons=true&hide_border=true&count_private=true&rank_icon=github&bg_color=0D1117&title_color=00ADD8&icon_color=ED8B00&text_color=E2E8F0"/>
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangdodev&layout=compact&hide_border=true&langs_count=8&bg_color=0D1117&title_color=00ADD8&text_color=E2E8F0"/>
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=hoangdq08&show_icons=true&hide_border=true&count_private=true&rank_icon=github&bg_color=0D1117&title_color=00ADD8&icon_color=ED8B00&text_color=E2E8F0"/>
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangdq08&layout=compact&hide_border=true&langs_count=8&bg_color=0D1117&title_color=00ADD8&text_color=E2E8F0"/>
 </div>
 
 <div align="center">
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=hoangdodev&bg_color=0D1117&color=00ADD8&line=ED8B00&point=ffffff&area_color=00ADD8&area=true&hide_border=true"/>
+  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=hoangdq08&bg_color=0D1117&color=00ADD8&line=ED8B00&point=ffffff&area_color=00ADD8&area=true&hide_border=true"/>
 </div>
 
 <br/>
