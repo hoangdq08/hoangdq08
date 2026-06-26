@@ -1,86 +1,147 @@
-<h1 align="center">Hi, I'm Do Quoc Hoang 👋</h1>
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ADD8,100:ED8B00&height=220&section=header&text=Do%20Quoc%20Hoang&fontSize=52&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Senior%20Backend%20Engineer%20%E2%80%94%20Java%20%C2%B7%20Go%20%C2%B7%20Distributed%20Systems&descAlignY=58&descSize=17&descColor=E2E8F0"/>
+</div>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:hoangdo.dev08@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-</p>
+<br/>
+
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=5%2B+years+building+high-scalability+backends+%F0%9F%9A%80;Java+%2F+Spring+%2F+Grails+%E2%80%94+now+expanding+into+Go;Multi-tenant+%C2%B7+Event-driven+%C2%B7+Fintech+%C2%B7+IoT;Kafka+%C2%B7+Elasticsearch+%C2%B7+Redis+%C2%B7+PostgreSQL+%C2%B7+MQTT" />
+</div>
+
+<br/>
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="mailto:hoangdo.dev08@gmail.com">
+    <img src="https://img.shields.io/badge/hoangdo.dev08@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+  &nbsp;
+  <img src="https://komarev.com/ghpvc/?username=hoangdodev&style=for-the-badge&color=00ADD8&label=Views"/>
+</div>
+
+<br/>
+
+---
 
 ## 👨‍💻 About Me
 
-**Senior Backend Engineer | Java &amp; Go** · Ho Chi Minh City, Vietnam 🇻🇳
+> **Senior Backend Engineer | Java &amp; Go** · Ho Chi Minh City, Vietnam 🇻🇳
+>
+> 5+ years building high-scalability, data-intensive backend systems from architecture to production.
+> Specialized in multi-tenant platforms, event-driven pipelines, fintech integrations, and real-time/IoT services — now expanding into **Go** for high-concurrency, low-footprint workloads.
 
-5+ years building high-scalability, data-intensive backend systems from architecture to production. Specialized in multi-tenant platforms, event-driven pipelines, fintech integrations, and real-time/IoT services — now expanding into **Go** for high-concurrency, low-footprint workloads.
+<br/>
 
-<table>
-  <tr>
-    <td align="center"><b>⏳ 5+ years</b><br>Experience</td>
-    <td align="center"><b>👥 1.6M+</b><br>Users served</td>
-    <td align="center"><b>☕ Java &amp; Go</b><br>Core stack</td>
-    <td align="center"><b>🚀 Backend</b><br>Architecture</td>
-  </tr>
-</table>
+<div align="center">
+
+| ⏳ Experience | 👥 Users Served | 🏢 Companies | ☕ Core Stack |
+|:------------:|:---------------:|:------------:|:------------:|
+| **5+ years** | **1.6M+** | **2** | **Java &amp; Go** |
+
+</div>
+
+<br/>
+
+---
 
 ## ⚡ Tech Stack
 
+<div align="center">
+
 **Languages**
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+<img src="https://skillicons.dev/icons?i=java,go,python,ts,js&theme=dark&perline=8"/>
 
 **Backend &amp; Frameworks**
 
-![Spring](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Grails](https://img.shields.io/badge/Grails-559DD9?style=flat-square&logo=grails&logoColor=white)
-![Gin](https://img.shields.io/badge/Gin-008ECF?style=flat-square&logo=gin&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+<img src="https://skillicons.dev/icons?i=spring,gin,fastapi,nextjs,nodejs&theme=dark&perline=8"/>
 
 **Data &amp; Messaging**
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white)
-![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
-![MQTT](https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white)
+<img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,elasticsearch,kafka&theme=dark&perline=8"/>
 
 **DevOps &amp; Tools**
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+<img src="https://skillicons.dev/icons?i=docker,githubactions,grafana,prometheus,git,github,linux&theme=dark&perline=8"/>
+
+</div>
+
+<br/>
+
+---
 
 ## 💼 Experience
 
-**🏢 Freelance — Self-employed** · Ho Chi Minh City &nbsp;|&nbsp; *Apr 2026 – Present*
+<table width="100%">
+  <tr>
+    <td width="170" valign="top" align="center">
+      <br/>
+      <img src="https://img.shields.io/badge/Apr 2026 – Present-00ADD8?style=flat-square&labelColor=0D1117&color=00ADD8"/>
+      <br/><br/>
+      <sub>🏢 Freelance</sub><br/>
+      <sub>📍 Ho Chi Minh City</sub>
+    </td>
+    <td valign="top">
+      <br/>
+      <strong>Freelance Backend Engineer — Self-employed</strong>
+      <br/><br/>
+      &nbsp;&nbsp;▸ Delivering a <strong>Go-based EV-rental CRM &amp; IoT fleet platform</strong> (ShareXe) for a paying client<br/>
+      &nbsp;&nbsp;▸ Feature-based clean architecture (Go/Gin); real-time vehicle tracking over <strong>WebSockets</strong>, device management over <strong>MQTT/EMQX</strong><br/>
+      &nbsp;&nbsp;▸ Rolling out for a <strong>50-vehicle pilot</strong>; full-stack ownership (Go APIs, React/Vue, Flutter, Docker)
+    </td>
+  </tr>
+  <tr><td colspan="2"><hr/></td></tr>
+  <tr>
+    <td width="170" valign="top" align="center">
+      <br/>
+      <img src="https://img.shields.io/badge/Feb 2021 – Mar 2026-ED8B00?style=flat-square&labelColor=0D1117&color=ED8B00"/>
+      <br/><br/>
+      <sub>🏢 TriAnh Solutions</sub><br/>
+      <sub>📍 Ho Chi Minh City</sub>
+    </td>
+    <td valign="top">
+      <br/>
+      <strong>Backend Engineer → Senior Backend Engineer</strong>
+      <br/><br/>
+      &nbsp;&nbsp;▸ Built a <strong>multi-tenant water-utility billing core</strong> for multiple SAWACO subsidiaries — network of <strong>1.6M+ metered customers</strong><br/>
+      &nbsp;&nbsp;▸ Architected <strong>Kafka</strong> event-driven pipelines and an <strong>Elasticsearch</strong> search layer (multi-second → millisecond)<br/>
+      &nbsp;&nbsp;▸ Built a secure <strong>fintech gateway</strong> (VietQR, JWE/JWS); mentored 2 junior engineers
+    </td>
+  </tr>
+</table>
 
-▸ Delivering a **Go-based EV-rental CRM &amp; IoT fleet platform** (ShareXe) for a paying client
+<br/>
 
-▸ Feature-based clean architecture (Go/Gin), real-time vehicle tracking over **WebSockets**, device management over **MQTT/EMQX**
-
-▸ Rolling out for a **50-vehicle pilot**; full-stack ownership (Go APIs, React/Vue, Flutter, Docker)
-
-**🏢 TriAnh Solutions** · Ho Chi Minh City &nbsp;|&nbsp; *Feb 2021 – Mar 2026*
-
-▸ **Backend Engineer → Senior Backend Engineer** (promoted)
-
-▸ Built a **multi-tenant water-utility billing core** for multiple SAWACO subsidiaries — network of **1.6M+ metered customers**
-
-▸ Architected **Kafka** event-driven pipelines, an **Elasticsearch** search layer (multi-second → millisecond), and a secure **fintech gateway** (VietQR, JWE/JWS)
-
-▸ Mentored 2 junior engineers; led code reviews and architecture documentation
+---
 
 ## 📊 GitHub Stats
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=hoangdodev&show_icons=true&theme=tokyonight&hide_border=true" alt="stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangdodev&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
-</p>
+<div align="center">
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=hoangdodev&show_icons=true&hide_border=true&count_private=true&rank_icon=github&bg_color=0D1117&title_color=00ADD8&icon_color=ED8B00&text_color=E2E8F0"/>
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangdodev&layout=compact&hide_border=true&langs_count=8&bg_color=0D1117&title_color=00ADD8&text_color=E2E8F0"/>
+</div>
+
+<div align="center">
+  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=hoangdodev&bg_color=0D1117&color=00ADD8&line=ED8B00&point=ffffff&area_color=00ADD8&area=true&hide_border=true"/>
+</div>
+
+<br/>
+
+---
 
 ## 🎓 Education
 
+<div align="center">
+
 **B.Eng. in Artificial Intelligence** — University of Information Technology (VNU-HCM) · *Expected 2026*
+
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ED8B00,100:00ADD8&height=120&section=footer"/>
+</div>
