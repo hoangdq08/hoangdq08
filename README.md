@@ -53,15 +53,25 @@
 
 **Languages**
 
-<img src="https://skillicons.dev/icons?i=java,go,python,ts,js&theme=dark&perline=8"/>
+<img src="https://skillicons.dev/icons?i=java,go,python,ts,js,dart&theme=dark&perline=8"/>
 
 **Backend &amp; Frameworks**
 
-<img src="https://skillicons.dev/icons?i=spring,gin,fastapi,nextjs,nodejs&theme=dark&perline=8"/>
+<img src="https://skillicons.dev/icons?i=spring,fastapi,nextjs,nodejs&theme=dark&perline=8"/>
+<br/>
+![Gin](https://img.shields.io/badge/Gin-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Grails](https://img.shields.io/badge/Grails-559DD9?style=flat-square&logo=apachegroovy&logoColor=white)
+![Fiber](https://img.shields.io/badge/Fiber-00ADD8?style=flat-square&logo=go&logoColor=white)
 
 **Data &amp; Messaging**
 
 <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,elasticsearch,kafka&theme=dark&perline=8"/>
+<br/>
+![MQTT](https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white)
+
+**Frontend &amp; Mobile**
+
+<img src="https://skillicons.dev/icons?i=react,vue,flutter,tailwind&theme=dark&perline=8"/>
 
 **DevOps &amp; Tools**
 
