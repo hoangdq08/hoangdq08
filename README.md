@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ADD8,100:ED8B00&height=220&section=header&text=Do%20Quoc%20Hoang&fontSize=52&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Senior%20Backend%20Engineer%20%E2%80%94%20Java%20%C2%B7%20Go%20%C2%B7%20Distributed%20Systems&descAlignY=58&descSize=17&descColor=E2E8F0"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ADD8,100:ED8B00&height=220&section=header&text=Do%20Quoc%20Hoang&fontSize=52&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Fullstack%20Developer%20%E2%80%94%20Web%20%C2%B7%20Mobile%20%C2%B7%20AI&descAlignY=58&descSize=18&descColor=E2E8F0"/>
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=5%2B+years+building+high-scalability+backends+%F0%9F%9A%80;Java+%2F+Spring+%2F+Grails+%E2%80%94+now+expanding+into+Go;Multi-tenant+%C2%B7+Event-driven+%C2%B7+Fintech+%C2%B7+IoT;Kafka+%C2%B7+Elasticsearch+%C2%B7+Redis+%C2%B7+PostgreSQL+%C2%B7+MQTT" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=Fullstack+Developer+%E2%80%94+Web+%C2%B7+Mobile+%C2%B7+AI+%F0%9F%9A%80;5%2B+years+building+high-scalability+backends;Java+%2F+Go+%2F+Spring+%2F+Grails+%E2%80%94+React+%2F+Vue+%2F+Flutter;AI-integrated+products+%E2%80%94+FastAPI+%C2%B7+Ollama+%C2%B7+Vision+models" />
 </div>
 
 <br/>
@@ -28,18 +28,18 @@
 
 ## 👨‍💻 About Me
 
-> **Senior Backend Engineer | Java &amp; Go** · Ho Chi Minh City, Vietnam 🇻🇳
+> **Fullstack Developer — Web · Mobile · AI** · Ho Chi Minh City, Vietnam 🇻🇳
 >
-> 5+ years building high-scalability, data-intensive backend systems from architecture to production.
-> Specialized in multi-tenant platforms, event-driven pipelines, fintech integrations, and real-time/IoT services — now expanding into **Go** for high-concurrency, low-footprint workloads.
+> 5+ years building high-scalability, data-intensive products from architecture to production.
+> Strong backend foundation (Java, Go, Spring, Grails) with full-stack delivery across React/Vue web, Flutter mobile, and AI-integrated services (FastAPI, self-hosted LLMs, vision models).
 
 <br/>
 
 <div align="center">
 
-| ⏳ Experience | 👥 Users Served | 🏢 Companies | ☕ Core Stack |
-|:------------:|:---------------:|:------------:|:------------:|
-| **5+ years** | **1.6M+** | **2** | **Java &amp; Go** |
+| ⏳ Experience | 👥 Users Served | 🏢 Companies | 🧩 Stack |
+|:------------:|:---------------:|:------------:|:--------:|
+| **5+ years** | **1.6M+** | **2** | **Web · Mobile · AI** |
 
 </div>
 
