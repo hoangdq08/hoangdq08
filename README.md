@@ -5,7 +5,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=Fullstack+Developer+%E2%80%94+Web+%C2%B7+Mobile+%C2%B7+AI+%F0%9F%9A%80;5%2B+years+building+high-scalability+backends;Java+%2F+Go+%2F+Spring+%2F+Grails+%E2%80%94+React+%2F+Vue+%2F+Flutter;AI-integrated+products+%E2%80%94+FastAPI+%C2%B7+Ollama+%C2%B7+Vision+models" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=Fullstack+Developer+%E2%80%94+Web+%C2%B7+Mobile+%C2%B7+AI+%F0%9F%9A%80;5%2B+years+building+products+from+concept+to+deployment;Multi-tenant+%C2%B7+Event-driven+%C2%B7+Fintech+%C2%B7+Real-time+IoT;AI-integrated+products+%E2%80%94+self-hosted+LLMs+%26+vision;Serving+1.6M%2B+users+in+production" />
 </div>
 
 <br/>
