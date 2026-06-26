@@ -59,15 +59,15 @@
 
 <img src="https://skillicons.dev/icons?i=spring,fastapi,nextjs,nodejs&theme=dark&perline=8"/>
 <br/>
-![Gin](https://img.shields.io/badge/Gin-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Grails](https://img.shields.io/badge/Grails-559DD9?style=flat-square&logo=apachegroovy&logoColor=white)
-![Fiber](https://img.shields.io/badge/Fiber-00ADD8?style=flat-square&logo=go&logoColor=white)
+<img src="https://img.shields.io/badge/Gin-00ADD8?style=flat-square&logo=go&logoColor=white"/>
+<img src="https://img.shields.io/badge/Fiber-00ADD8?style=flat-square&logo=go&logoColor=white"/>
+<img src="https://img.shields.io/badge/Grails-559DD9?style=flat-square&logo=apachegroovy&logoColor=white"/>
 
 **Data &amp; Messaging**
 
 <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,elasticsearch,kafka&theme=dark&perline=8"/>
 <br/>
-![MQTT](https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white)
+<img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white"/>
 
 **Frontend &amp; Mobile**
 
