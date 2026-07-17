@@ -1,152 +1,84 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ADD8,100:ED8B00&height=220&section=header&text=Do%20Quoc%20Hoang&fontSize=52&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Fullstack%20Developer%20%E2%80%94%20Web%20%C2%B7%20Mobile%20%C2%B7%20AI&descAlignY=58&descSize=18&descColor=E2E8F0"/>
+
+# Đỗ Quốc Hoàng
+
+### Senior Backend Engineer · Java · Go · Distributed Systems
+
+I build scalable, data-intensive backend systems and deliver products from architecture to production.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/)
+[![Email](https://img.shields.io/badge/Email-hoangdo.dev08%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:hoangdo.dev08@gmail.com)
+![Location](https://img.shields.io/badge/Ho_Chi_Minh_City-Vietnam-2EA44F?style=flat-square)
+
 </div>
-
-<br/>
-
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=Fullstack+Developer+%E2%80%94+Web+%C2%B7+Mobile+%C2%B7+AI+%F0%9F%9A%80;5%2B+years+building+products+from+concept+to+deployment;Multi-tenant+%C2%B7+Event-driven+%C2%B7+Fintech+%C2%B7+Real-time+IoT;AI-integrated+products+%E2%80%94+self-hosted+LLMs+%26+vision;Serving+1.6M%2B+users+in+production" />
-</div>
-
-<br/>
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  &nbsp;
-  <a href="mailto:hoangdo.dev08@gmail.com">
-    <img src="https://img.shields.io/badge/hoangdo.dev08@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=hoangdq08&style=for-the-badge&color=00ADD8&label=Views"/>
-</div>
-
-<br/>
 
 ---
 
-## 👨‍💻 About Me
+## At a glance
 
-> **Fullstack Developer — Web · Mobile · AI** · Ho Chi Minh City, Vietnam 🇻🇳
->
-> 5+ years building high-scalability, data-intensive products from architecture to production.
-> Strong backend foundation (Java, Go, Spring, Grails) with full-stack delivery across React/Vue web, Flutter mobile, and AI-integrated services (FastAPI, self-hosted LLMs, vision models).
+| Experience | Production scale | Current delivery |
+|:--|:--|:--|
+| **5+ years** building backend systems | Water-utility platforms supporting a network of **1.6M+ metered customers** | EV-rental CRM and IoT fleet platform for a **50-vehicle pilot** |
 
-<br/>
+My core background is in **Java, Go, distributed systems, event-driven architecture, real-time communication, and database optimization**. I am most effective where product requirements meet demanding reliability, security, and performance constraints.
 
-<div align="center">
+## Selected work
 
-| 🚀 Projects | 👥 Users Served | ⏳ Experience | 🧩 Stack |
-|:----------:|:---------------:|:------------:|:--------:|
-| **10+** | **1.6M+** | **5+ years** | **Web · Mobile · AI** |
+### EV-Rental CRM & IoT Fleet Platform
 
-</div>
+Building a Go-based platform for renter onboarding, contracts, finance, fleet operations, and connected in-vehicle devices.
 
-<br/>
+- Structured the backend around independent domain modules using feature-based clean architecture.
+- Built real-time vehicle tracking and event delivery with WebSockets.
+- Integrated MQTT/EMQX for telemetry, alerts, NFC scans, and remote device commands.
+- Own delivery across Go APIs, React/Vue dashboards, Flutter mobile, and Docker deployment.
 
----
+`Go` `Gin` `PostgreSQL` `MongoDB` `WebSockets` `MQTT` `EMQX` `Docker`
 
-## ⚡ Tech Stack
+### Multi-Tenant Water Utility Platform
 
-<div align="center">
+Developed billing and operational systems for multiple SAWACO subsidiary utilities with tenant-specific tariffs, rules, and workflows.
 
-**Languages**
+- Built high-volume synchronization pipelines between billing systems and central infrastructure.
+- Improved query performance through SQL refactoring, indexing, and removal of N+1 access patterns.
+- Delivered asynchronous reporting workflows designed to avoid out-of-memory failures during month-end processing.
 
-<img src="https://skillicons.dev/icons?i=java,go,python,ts,js,dart&theme=dark&perline=8"/>
+`Java` `Grails` `SQL Server` `Oracle` `Quartz` `JasperReports`
 
-**Backend &amp; Frameworks**
+### Real-Time & Fintech Modernization
 
-<img src="https://skillicons.dev/icons?i=spring,fastapi,nextjs,nodejs&theme=dark&perline=8"/>
-<br/>
-<img src="https://img.shields.io/badge/Gin-00ADD8?style=flat-square&logo=go&logoColor=white"/>
-<img src="https://img.shields.io/badge/Fiber-00ADD8?style=flat-square&logo=go&logoColor=white"/>
-<img src="https://img.shields.io/badge/Grails-559DD9?style=flat-square&logo=apachegroovy&logoColor=white"/>
+Modernized legacy workflows with event-driven processing, faster search, distributed caching, and secure banking integration.
 
-**Data &amp; Messaging**
+- Introduced Kafka pipelines to decouple heavy database operations during peak billing cycles.
+- Replaced wildcard SQL searches with Elasticsearch-backed lookups.
+- Built VietQR banking integration using JWE/JWS and BouncyCastle.
+- Delivered SSE/WebSocket notifications and Redis-backed distributed caching.
 
-<img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,elasticsearch,kafka&theme=dark&perline=8"/>
-<br/>
-<img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white"/>
+`Java` `Kafka` `Elasticsearch` `Redis` `JWE/JWS` `SSE` `WebSockets`
 
-**Frontend &amp; Mobile**
+## Core toolkit
 
-<img src="https://skillicons.dev/icons?i=react,vue,flutter,tailwind&theme=dark&perline=8"/>
+| Area | Technologies |
+|:--|:--|
+| **Backend** | Java, Go, Groovy/Grails, Spring Boot, Gin, Fiber |
+| **Data** | PostgreSQL, SQL Server, MySQL, MongoDB, Redis, Elasticsearch |
+| **Messaging & real time** | Kafka, MQTT/EMQX, Redis Streams, WebSockets, SSE |
+| **Delivery** | Docker, GitHub Actions, Prometheus, Grafana |
+| **Security** | OAuth2/OIDC, JWT, RBAC, JWE/JWS |
 
-**DevOps &amp; Tools**
+## Open-source work
 
-<img src="https://skillicons.dev/icons?i=docker,githubactions,grafana,prometheus,git,github,linux&theme=dark&perline=8"/>
+### [jcode-agentpet-bridge](https://github.com/hoangdq08/jcode-agentpet-bridge)
 
-</div>
+A Go bridge that exposes Jcode TUI state to the AgentPet macOS menu-bar companion through debug-socket polling.
 
-<br/>
+`Go` `macOS` `Developer tooling`
 
----
+## Experience
 
-## 💼 Experience
+- **Freelance Backend Engineer**, Self-employed · Apr 2026 – Present
+- **Senior Backend Engineer**, TriAnh Solutions · Feb 2021 – Mar 2026
 
-<table width="100%">
-  <tr>
-    <td width="170" valign="top" align="center">
-      <br/>
-      <img src="https://img.shields.io/badge/Apr 2026 – Present-00ADD8?style=flat-square&labelColor=0D1117&color=00ADD8"/>
-      <br/><br/>
-      <sub>🏢 Freelance</sub><br/>
-      <sub>📍 Ho Chi Minh City</sub>
-    </td>
-    <td valign="top">
-      <br/>
-      <strong>Freelance Backend Engineer — Self-employed</strong>
-      <br/><br/>
-      &nbsp;&nbsp;▸ Delivering a <strong>Go-based EV-rental CRM &amp; IoT fleet platform</strong> (ShareXe) for a paying client<br/>
-      &nbsp;&nbsp;▸ Feature-based clean architecture (Go/Gin); real-time vehicle tracking over <strong>WebSockets</strong>, device management over <strong>MQTT/EMQX</strong><br/>
-      &nbsp;&nbsp;▸ Rolling out for a <strong>50-vehicle pilot</strong>; full-stack ownership (Go APIs, React/Vue, Flutter, Docker)
-    </td>
-  </tr>
-  <tr><td colspan="2"><hr/></td></tr>
-  <tr>
-    <td width="170" valign="top" align="center">
-      <br/>
-      <img src="https://img.shields.io/badge/Feb 2021 – Mar 2026-ED8B00?style=flat-square&labelColor=0D1117&color=ED8B00"/>
-      <br/><br/>
-      <sub>🏢 TriAnh Solutions</sub><br/>
-      <sub>📍 Ho Chi Minh City</sub>
-    </td>
-    <td valign="top">
-      <br/>
-      <strong>Backend Engineer → Senior Backend Engineer</strong>
-      <br/><br/>
-      &nbsp;&nbsp;▸ Built a <strong>multi-tenant water-utility billing core</strong> for multiple SAWACO subsidiaries — network of <strong>1.6M+ metered customers</strong><br/>
-      &nbsp;&nbsp;▸ Architected <strong>Kafka</strong> event-driven pipelines and an <strong>Elasticsearch</strong> search layer (multi-second → millisecond)<br/>
-      &nbsp;&nbsp;▸ Built a secure <strong>fintech gateway</strong> (VietQR, JWE/JWS); mentored 2 junior engineers
-    </td>
-  </tr>
-</table>
+## Education
 
-<br/>
-
----
-
-## 📊 GitHub Activity
-
-<div align="center">
-  <img width="95%" alt="Đỗ Quốc Hoàng's GitHub contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=hoangdq08&bg_color=0D1117&color=00ADD8&line=ED8B00&point=ffffff&area_color=00ADD8&area=true&hide_border=true"/>
-</div>
-
-<br/>
-
----
-
-## 🎓 Education
-
-<div align="center">
-
-**B.Eng. in Artificial Intelligence** — University of Information Technology (VNU-HCM) · *Expected 2026*
-
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ED8B00,100:00ADD8&height=120&section=footer"/>
-</div>
+**B.Eng. in Artificial Intelligence** · University of Information Technology, VNU-HCM · Expected 2026
