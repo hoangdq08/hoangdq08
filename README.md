@@ -127,15 +127,10 @@
 
 ---
 
-## 📊 GitHub Stats
+## 📊 GitHub Activity
 
 <div align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=hoangdq08&show_icons=true&hide_border=true&count_private=true&rank_icon=github&bg_color=0D1117&title_color=00ADD8&icon_color=ED8B00&text_color=E2E8F0"/>
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangdq08&layout=compact&hide_border=true&langs_count=8&bg_color=0D1117&title_color=00ADD8&text_color=E2E8F0"/>
-</div>
-
-<div align="center">
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=hoangdq08&bg_color=0D1117&color=00ADD8&line=ED8B00&point=ffffff&area_color=00ADD8&area=true&hide_border=true"/>
+  <img width="95%" alt="Đỗ Quốc Hoàng's GitHub contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=hoangdq08&bg_color=0D1117&color=00ADD8&line=ED8B00&point=ffffff&area_color=00ADD8&area=true&hide_border=true"/>
 </div>
 
 <br/>
