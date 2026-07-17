@@ -5,7 +5,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2500&pause=800&color=00ADD8&center=true&vCenter=true&width=720&lines=Senior+Backend+Engineer+%E2%80%94+Java+%C2%B7+Go+%C2%B7+Distributed+Systems;5%2B+years+building+highly+scalable+products+from+architecture+to+production;Multi-tenant+%C2%B7+Event-driven+%C2%B7+Fintech+%C2%B7+Real-time+IoT;Full-stack+delivery+across+Web+%C2%B7+Mobile+%C2%B7+AI;Serving+1.6M%2B+metered+customers+in+production" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=600&amp;size=18&amp;duration=2500&amp;pause=800&amp;color=00ADD8&amp;center=true&amp;vCenter=true&amp;width=720&amp;lines=Senior+Backend+Engineer+%E2%80%94+Java+%C2%B7+Go+%C2%B7+Distributed+Systems;5%2B+years+building+scalable+products+end+to+end;Multi-tenant+%C2%B7+Event-driven+%C2%B7+Fintech+%C2%B7+Real-time+IoT;Full-stack+delivery+across+Web+%C2%B7+Mobile+%C2%B7+AI;Supporting+1.6M%2B+metered+customers" />
 </div>
 
 <br/>
