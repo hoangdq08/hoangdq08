@@ -1,12 +1,11 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ADD8,100:ED8B00&height=180&section=header&text=Do%20Quoc%20Hoang&fontSize=48&fontColor=fff&fontAlignY=36&desc=Senior%20Backend%20Engineer%20%C2%B7%20Java%20%C2%B7%20Go%20%C2%B7%20Distributed%20Systems&descAlignY=58&descSize=16&descColor=E2E8F0" alt="Do Quoc Hoang, Senior Backend Engineer"/>
+# Hi, I'm Đỗ Quốc Hoàng 👋
 
-  <a href="https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:hoangdo.dev08@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-  <img src="https://img.shields.io/badge/Open%20to-Remote%20%C2%B7%20Freelance-2EA44F?style=for-the-badge" alt="Open to remote and freelance"/>
-</div>
+**Senior Backend Engineer · Java · Go · Distributed Systems**
 
-<br/>
+<a href="https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="mailto:hoangdo.dev08@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
+
+🟢 **Open to remote and freelance backend roles.**
 
 I build **backend systems that handle real money and real load**: multi-tenant billing for **1.6M+ metered customers**, event-driven pipelines on **Kafka**, fintech gateways, and real-time **IoT fleet platforms**.
 
@@ -32,18 +31,23 @@ I build **backend systems that handle real money and real load**: multi-tenant b
 
 ## 🚀 Featured Projects
 
-| Project | What it is | Stack |
-|---|---|---|
-| [**uit-nongtri-ai**](https://github.com/hoangdq08/uit-nongtri-ai) | Self-hosted AI assistant for Vietnamese farmers: RAG chat over a farming knowledge base, image-based pest diagnosis, admin trust dashboard. Clean Architecture + DDD, one-command Docker Compose | FastAPI · Next.js · ChromaDB · Ollama |
-| [**uit-ohs-law-retrieval**](https://github.com/hoangdq08/uit-ohs-law-retrieval) | Two-stage Vietnamese legal QA: classify the question into 8 regulation groups, then retrieve the article. LinearSVC reaches 0.91 macro-F1 on held-out synthetic test, evaluated separately on 42 real citizen questions | Python · scikit-learn · Streamlit |
-| [**uit-vietnews-summarization**](https://github.com/hoangdq08/uit-vietnews-summarization) | Extractive (Lead-n, TextRank) vs abstractive (ViT5) summarization on Vietnamese news, ROUGE plus a manual factuality review of model outputs | Python · Transformers · Gradio |
-| [**jcode-agentpet-bridge**](https://github.com/hoangdq08/jcode-agentpet-bridge) | Tiny daemon bridging coding-agent sessions to a macOS menu-bar pet over Unix sockets. Single static binary, ~6 MB RSS | Go |
-| [**9router-relay**](https://github.com/hoangdq08/9router-relay) | Minimal TCP relay for OpenAI-compatible clients, graceful shutdown, zero dependencies | Go |
-
-<!-- Add at the TOP of the table when published:
-| [**fleet-tracking**](https://github.com/hoangdq08/fleet-tracking) | Real-time IoT fleet tracking reference: MQTT ingest, WebSocket fan-out, Docker Compose one-command demo | Go · Gin · EMQX · PostgreSQL |
-| [**billing-core-lite**](https://github.com/hoangdq08/billing-core-lite) | Multi-tenant billing reference with Kafka events and Elasticsearch search, with latency benchmark | Java · Spring · Kafka · ES |
+<!-- Add at the TOP of this list when published:
+- **[fleet-tracking](https://github.com/hoangdq08/fleet-tracking)**: real-time IoT fleet tracking reference with MQTT ingest, WebSocket fan-out and a one-command Docker Compose demo.
+  <br/><sub>Go · Gin · EMQX · PostgreSQL</sub>
+- **[billing-core-lite](https://github.com/hoangdq08/billing-core-lite)**: multi-tenant billing reference with Kafka events, Elasticsearch search and a latency benchmark.
+  <br/><sub>Java · Spring · Kafka · Elasticsearch</sub>
 -->
+
+- **[uit-nongtri-ai](https://github.com/hoangdq08/uit-nongtri-ai)**: self-hosted AI assistant for Vietnamese farmers. RAG chat over a farming knowledge base, image-based pest diagnosis and an admin trust dashboard, built with Clean Architecture + DDD and shipped as one Docker Compose stack.
+  <br/><sub>FastAPI · Next.js · ChromaDB · Ollama</sub>
+- **[uit-ohs-law-retrieval](https://github.com/hoangdq08/uit-ohs-law-retrieval)**: two-stage Vietnamese legal QA. Classifies a question into 8 regulation groups, then retrieves the article. LinearSVC reaches 0.91 macro-F1 on a held-out synthetic test and is evaluated separately on 42 real citizen questions.
+  <br/><sub>Python · scikit-learn · Streamlit</sub>
+- **[uit-vietnews-summarization](https://github.com/hoangdq08/uit-vietnews-summarization)**: extractive (Lead-n, TextRank) vs abstractive (ViT5) summarization on Vietnamese news, scored with ROUGE plus a manual factuality review of model outputs.
+  <br/><sub>Python · Transformers · Gradio</sub>
+- **[jcode-agentpet-bridge](https://github.com/hoangdq08/jcode-agentpet-bridge)**: tiny daemon bridging coding-agent sessions to a macOS menu-bar pet over Unix sockets. Single static binary, ~6 MB RSS.
+  <br/><sub>Go</sub>
+- **[9router-relay](https://github.com/hoangdq08/9router-relay)**: minimal TCP relay for OpenAI-compatible clients with graceful shutdown and zero dependencies.
+  <br/><sub>Go</sub>
 
 <sub>🎓 `uit-*` repos are team course projects at UIT (VNU-HCM).</sub>
 
