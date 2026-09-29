@@ -2,7 +2,7 @@
 
 **Senior Backend Engineer · Java · Go · Distributed Systems**
 
-<a href="https://www.linkedin.com/in/ho%C3%A0ng-%C4%91%E1%BB%97-408567389/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://www.linkedin.com/in/hoangdq08/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 <a href="mailto:hoangdo.dev08@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
 
 🟢 **Open to remote and freelance backend roles.**
