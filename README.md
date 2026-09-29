@@ -34,12 +34,18 @@ I build **backend systems that handle real money and real load**: multi-tenant b
 
 | Project | What it is | Stack |
 |---|---|---|
-| [**uit-vietnews-summarization**](https://github.com/hoangdq08/uit-vietnews-summarization) | Extractive vs abstractive summarization on Vietnamese news (Vietnews), comparative study with ROUGE evaluation and a Gradio demo | Python · scikit-learn · Transformers |
-| [**jcode-agentpet-bridge**](https://github.com/hoangdq08/jcode-agentpet-bridge) | Bridges a coding-agent TUI's state to a macOS menu-bar pet via debug socket polling | Go |
-<!-- Add when published:
+| [**uit-nongtri-ai**](https://github.com/hoangdq08/uit-nongtri-ai) | Self-hosted AI assistant for Vietnamese farmers: RAG chat over a farming knowledge base, image-based pest diagnosis, admin trust dashboard. Clean Architecture + DDD, one-command Docker Compose | FastAPI · Next.js · ChromaDB · Ollama |
+| [**uit-ohs-law-retrieval**](https://github.com/hoangdq08/uit-ohs-law-retrieval) | Two-stage Vietnamese legal QA: classify the question into 8 regulation groups, then retrieve the article. LinearSVC reaches 0.91 macro-F1 on held-out synthetic test, evaluated separately on 42 real citizen questions | Python · scikit-learn · Streamlit |
+| [**uit-vietnews-summarization**](https://github.com/hoangdq08/uit-vietnews-summarization) | Extractive (Lead-n, TextRank) vs abstractive (ViT5) summarization on Vietnamese news, ROUGE plus a manual factuality review of model outputs | Python · Transformers · Gradio |
+| [**jcode-agentpet-bridge**](https://github.com/hoangdq08/jcode-agentpet-bridge) | Tiny daemon bridging coding-agent sessions to a macOS menu-bar pet over Unix sockets. Single static binary, ~6 MB RSS | Go |
+| [**9router-relay**](https://github.com/hoangdq08/9router-relay) | Minimal TCP relay for OpenAI-compatible clients, graceful shutdown, zero dependencies | Go |
+
+<!-- Add at the TOP of the table when published:
 | [**fleet-tracking**](https://github.com/hoangdq08/fleet-tracking) | Real-time IoT fleet tracking reference: MQTT ingest, WebSocket fan-out, Docker Compose one-command demo | Go · Gin · EMQX · PostgreSQL |
 | [**billing-core-lite**](https://github.com/hoangdq08/billing-core-lite) | Multi-tenant billing reference with Kafka events and Elasticsearch search, with latency benchmark | Java · Spring · Kafka · ES |
 -->
+
+<sub>🎓 `uit-*` repos are team course projects at UIT (VNU-HCM).</sub>
 
 ---
 
