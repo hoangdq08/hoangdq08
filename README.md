@@ -34,7 +34,7 @@ I build **backend systems that handle real money and real load**: multi-tenant b
 
 | Project | What it is | Stack |
 |---|---|---|
-| [**vietnews-summarization**](https://github.com/hoangdq08/vietnews-summarization-extractive-abstractive) | Extractive vs abstractive summarization on Vietnamese news (Vietnews), comparative study with ROUGE evaluation and a Gradio demo | Python · scikit-learn · Transformers |
+| [**uit-vietnews-summarization**](https://github.com/hoangdq08/uit-vietnews-summarization) | Extractive vs abstractive summarization on Vietnamese news (Vietnews), comparative study with ROUGE evaluation and a Gradio demo | Python · scikit-learn · Transformers |
 | [**jcode-agentpet-bridge**](https://github.com/hoangdq08/jcode-agentpet-bridge) | Bridges a coding-agent TUI's state to a macOS menu-bar pet via debug socket polling | Go |
 <!-- Add when published:
 | [**fleet-tracking**](https://github.com/hoangdq08/fleet-tracking) | Real-time IoT fleet tracking reference: MQTT ingest, WebSocket fan-out, Docker Compose one-command demo | Go · Gin · EMQX · PostgreSQL |
