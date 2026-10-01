@@ -48,17 +48,17 @@ def banner(t: dict) -> str:
 '''
 
 
-def box(t, x, y, w, h, title, sub="", strong=False):
+def box(t, x, y, w, h, title, sub="", strong=False, ts=17, ss=13):
     stroke = t["accent"] if strong else t["border"]
     sw = 2 if strong else 1
     s = (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{t["card"]}" stroke="{stroke}" stroke-width="{sw}"/>'
-         f'<text x="{x+w/2}" y="{y+(h/2 - (8 if sub else -6))}" text-anchor="middle" font-family="{FONT}" font-size="17" font-weight="600" fill="{t["fg"]}">{esc(title)}</text>')
+         f'<text x="{x+w/2}" y="{y+(h/2 - (8 if sub else -6))}" text-anchor="middle" font-family="{FONT}" font-size="{ts}" font-weight="600" fill="{t["fg"]}">{esc(title)}</text>')
     if sub:
-        s += f'<text x="{x+w/2}" y="{y+h/2+16}" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{t["muted"]}">{esc(sub)}</text>'
+        s += f'<text x="{x+w/2}" y="{y+h/2+16}" text-anchor="middle" font-family="{MONO}" font-size="{ss}" fill="{t["muted"]}">{esc(sub)}</text>'
     return s
 
 
-def arrow(t, x1, y1, x2, y2, label="", place="above"):
+def arrow(t, x1, y1, x2, y2, label="", place="above", fs=12):
     s = f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{t["line"]}" stroke-width="2" marker-end="url(#a)"/>'
     if label:
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
@@ -66,18 +66,22 @@ def arrow(t, x1, y1, x2, y2, label="", place="above"):
             x, y, anchor = mx, my - 8, "middle"
         elif place == "wedge-up":  # rising diagonal: label in the gap below it
             x, y, anchor = x1 + 52, my + 16, "start"
-        else:  # "wedge-down": falling diagonal, label in the gap above it
+        elif place == "wedge-down":  # falling diagonal, label in the gap above it
             x, y, anchor = x1 + 52, my - 12, "start"
-        s += f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="{MONO}" font-size="12" fill="{t["muted"]}">{esc(label)}</text>'
+        elif place == "left":  # vertical or diagonal arrow, label to its left
+            x, y, anchor = mx - 10, my + 5, "end"
+        else:  # "right"
+            x, y, anchor = mx + 10, my + 5, "start"
+        s += f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="{MONO}" font-size="{fs}" fill="{t["muted"]}">{esc(label)}</text>'
     return s
 
 
-def frame(t, title, desc, body, h=260):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{h}" viewBox="0 0 1000 {h}" role="img" aria-labelledby="t d">
+def frame(t, title, desc, body, h=260, w=1000):
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t d">
 <title id="t">{esc(title)}</title>
 <desc id="d">{esc(desc)}</desc>
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="{t["line"]}"/></marker></defs>
-<rect width="1000" height="{h}" rx="16" fill="{t["bg"]}" stroke="{t["border"]}"/>
+<rect width="{w}" height="{h}" rx="16" fill="{t["bg"]}" stroke="{t["border"]}"/>
 {body}
 </svg>
 '''
@@ -117,10 +121,92 @@ def fleet(t):
                  "".join(b))
 
 
+# Mobile variants: 400 units wide so text stays >= ~11.5px when GitHub scales them to ~358px on a 390px phone.
+MW = 400
+
+
+def banner_mobile(t: dict) -> str:
+    stats = [("1.6M+", "metered customers"), ("5+ yrs", "in production"),
+             ("s → ms", "search latency"), ("50", "EV pilot fleet")]
+    pad, gap, th, y0 = 20, 12, 72, 196
+    tw = (MW - 2 * pad - gap) / 2
+    tiles = []
+    for i, (num, label) in enumerate(stats):
+        x, y = pad + (i % 2) * (tw + gap), y0 + (i // 2) * (th + gap)
+        tiles.append(
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{t["card"]}" stroke="{t["border"]}"/>'
+            f'<text x="{x+14}" y="{y+32}" font-family="{FONT}" font-size="24" font-weight="700" fill="{t["accent"]}">{esc(num)}</text>'
+            f'<text x="{x+14}" y="{y+56}" font-family="{FONT}" font-size="14" fill="{t["muted"]}">{esc(label)}</text>'
+        )
+    h = y0 + 2 * th + gap + pad
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{MW}" height="{h}" viewBox="0 0 {MW} {h}" role="img" aria-labelledby="t d">
+<title id="t">Đỗ Quốc Hoàng, Senior Backend Engineer</title>
+<desc id="d">Java, Go, distributed systems. 1.6M+ metered customers, 5+ years in production, search latency from seconds to milliseconds, 50-vehicle EV pilot.</desc>
+<rect width="{MW}" height="{h}" rx="16" fill="{t["bg"]}" stroke="{t["border"]}"/>
+<rect x="20" y="30" width="5" height="88" rx="2.5" fill="{t["accent"]}"/>
+<text x="38" y="62" font-family="{FONT}" font-size="34" font-weight="700" fill="{t["fg"]}">Đỗ Quốc Hoàng</text>
+<text x="38" y="92" font-family="{FONT}" font-size="18" fill="{t["fg"]}">Senior Backend Engineer</text>
+<text x="38" y="115" font-family="{FONT}" font-size="16" fill="{t["fg"]}">Java · Go · Distributed Systems</text>
+<text x="20" y="152" font-family="{MONO}" font-size="13" fill="{t["muted"]}">Ho Chi Minh City · UTC+7</text>
+<text x="20" y="174" font-family="{MONO}" font-size="13" fill="{t["accent2"]}">● open to remote &amp; freelance</text>
+{"".join(tiles)}
+</svg>
+'''
+
+
+def vflow(t, title, desc, header, chain, split):
+    """Vertical diagram: chain of (title, sub, strong, arrow_label) boxes, then a two-way split."""
+    bw, bh, gap = 260, 58, 36
+    bx, cx = (MW - bw) / 2, MW / 2
+    b = [f'<text x="20" y="32" font-family="{FONT}" font-size="15" font-weight="600" fill="{t["accent"]}">{esc(header)}</text>']
+    y = 50
+    for i, (ti, su, st, lab) in enumerate(chain):
+        if i:
+            b.append(arrow(t, cx, y - gap, cx, y, lab, "right", fs=13))
+        b.append(box(t, bx, y, bw, bh + (8 if st else 0), ti, su, st, ts=16, ss=13))
+        y += bh + (8 if st else 0) + gap
+    top, sw, sh = y - gap, 172, 62
+    y += 20  # taller fork so split labels sit clear of the diagonal arrows
+    for k, (ti, su, lab) in enumerate(split):
+        sx = 20 if k == 0 else MW - 20 - sw
+        b.append(arrow(t, cx, top, sx + sw / 2, y))
+        if lab:
+            lx = cx - 22 if k == 0 else cx + 22
+            ly = top + (y - top) / 2 + 5
+            anchor = "end" if k == 0 else "start"
+            b.append(f'<text x="{lx}" y="{ly}" text-anchor="{anchor}" font-family="{MONO}" font-size="13" '
+                     f'fill="{t["muted"]}" paint-order="stroke" stroke="{t["bg"]}" stroke-width="5">{esc(lab)}</text>')
+        b.append(box(t, sx, y, sw, sh, ti, su, ts=16, ss=13))
+    return frame(t, title, desc, "".join(b), h=y + sh + 20, w=MW)
+
+
+def billing_mobile(t):
+    return vflow(t, "Multi-tenant water-utility billing architecture",
+                 "Utility subsidiaries feed a multi-tenant billing core, which publishes events to Kafka pipelines that feed an Elasticsearch search layer and a secure VietQR payment gateway.",
+                 "1.6M+ metered customers",
+                 [("Utility subsidiaries", "multiple tenants", False, ""),
+                  ("Billing core", "multi-tenant · Java", True, ""),
+                  ("Kafka", "event pipelines", False, "events")],
+                 [("Elasticsearch", "search: s → ms", ""), ("Fintech gateway", "VietQR · JWE/JWS", "")])
+
+
+def fleet_mobile(t):
+    return vflow(t, "EV-rental CRM and IoT fleet platform architecture",
+                 "EV fleet devices publish over MQTT to an EMQX broker consumed by a Go Gin backend, which streams live vehicle state to React and Vue dashboards over WebSockets and serves a Flutter app.",
+                 "Real-time tracking · 50-vehicle pilot",
+                 [("EV fleet", "IoT devices", False, ""),
+                  ("EMQX", "broker", False, "MQTT"),
+                  ("Go / Gin backend", "feature-based clean arch", True, "")],
+                 [("Ops dashboards", "React · Vue", "WebSocket"), ("Rider app", "Flutter", "REST")])
+
+
 for name, t in THEMES.items():
     (OUT / f"banner-{name}.svg").write_text(banner(t), encoding="utf-8")
     (OUT / f"billing-{name}.svg").write_text(billing(t), encoding="utf-8")
     (OUT / f"fleet-{name}.svg").write_text(fleet(t), encoding="utf-8")
+    (OUT / f"banner-mobile-{name}.svg").write_text(banner_mobile(t), encoding="utf-8")
+    (OUT / f"billing-mobile-{name}.svg").write_text(billing_mobile(t), encoding="utf-8")
+    (OUT / f"fleet-mobile-{name}.svg").write_text(fleet_mobile(t), encoding="utf-8")
 print("written:", sorted(p.name for p in OUT.iterdir()))
 
 

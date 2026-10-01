@@ -1,4 +1,6 @@
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banner-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="assets/banner-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <img src="assets/banner-light.svg" width="100%" alt="Đỗ Quốc Hoàng, Senior Backend Engineer. Java, Go, distributed systems. 1.6M+ metered customers, 5+ years in production, search latency from seconds to milliseconds, 50-vehicle EV pilot.">
 </picture>
@@ -13,6 +15,8 @@ I build **backend systems that handle real money and real load**: multi-tenant b
 **TriAnh Solutions** · Backend → Senior Backend Engineer · *Feb 2021 – Mar 2026*
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/billing-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="assets/billing-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/billing-dark.svg">
   <img src="assets/billing-light.svg" width="100%" alt="Utility subsidiaries feed a multi-tenant billing core, which publishes events to Kafka pipelines that feed an Elasticsearch search layer and a secure VietQR payment gateway.">
 </picture>
@@ -25,6 +29,8 @@ I build **backend systems that handle real money and real load**: multi-tenant b
 **Freelance** · Backend Engineer · *Apr 2026 – Present*
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/fleet-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="assets/fleet-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/fleet-dark.svg">
   <img src="assets/fleet-light.svg" width="100%" alt="EV fleet devices publish over MQTT to an EMQX broker consumed by a Go Gin backend, which streams live vehicle state to React and Vue dashboards over WebSockets and serves a Flutter app.">
 </picture>
