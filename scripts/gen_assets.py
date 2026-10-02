@@ -1,217 +1,131 @@
 #!/usr/bin/env python3
-"""Generate profile SVG assets (banner + 2 architecture diagrams) in dark and light themes.
+"""Generate the profile terminal hero (desktop + mobile SVG).
 
-Only facts already public in the profile README are drawn. Run: python3 scripts/gen_assets.py (writes assets/*.svg, prints contrast check)
+Only facts already public on the profile are drawn. Run: python3 scripts/gen_assets.py
+(writes assets/terminal*.svg, prints a contrast check).
+
+The terminal is always dark: it reads as a terminal window on both GitHub themes, so one file per size.
+Typing uses SMIL (runs inside <img>, scripts do not). Every animated element keeps its finished state as
+the base value, so renderers without SMIL show the complete terminal. Animation plays once, then freezes.
 """
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 OUT.mkdir(parents=True, exist_ok=True)
 
-THEMES = {
-    "dark": dict(bg="#0D1117", card="#161B22", border="#30363D", fg="#F0F6FC", muted="#9198A1",
-                 accent="#3FB6E0", accent2="#F0A040", line="#6E7681"),
-    "light": dict(bg="#FFFFFF", card="#F6F8FA", border="#D1D9E0", fg="#1F2328", muted="#59636E",
-                  accent="#0A6E8F", accent2="#A3530A", line="#818B98"),
-}
-FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif"
-MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"
+T = dict(win="#0D1117", bar="#161B22", border="#3D444D", fg="#E6EDF3", muted="#9198A1",
+         green="#3FB950", orange="#F0A040", cyan="#3FB6E0")
+MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
+TITLE = "Đỗ Quốc Hoàng, Senior Backend Engineer"
+DESC = ("Terminal: Đỗ Quốc Hoàng, Senior Backend Engineer, Java and Go. 1.6M+ metered customers on a multi-tenant "
+        "billing core. Search latency from seconds to milliseconds with Kafka and Elasticsearch. 50-vehicle EV pilot "
+        "with real-time IoT tracking in Go. 5+ years shipping to production. Open to remote and freelance backend roles.")
 
 
 def esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def banner(t: dict) -> str:
-    stats = [("1.6M+", "metered customers"), ("5+ yrs", "shipping to production"),
-             ("s → ms", "search latency"), ("50", "EV pilot fleet")]
-    tiles = []
-    x0, y, w, h, gap = 40, 190, 215, 84, 20
-    for i, (num, label) in enumerate(stats):
-        x = x0 + i * (w + gap)
-        tiles.append(
-            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{t["card"]}" stroke="{t["border"]}"/>'
-            f'<text x="{x+18}" y="{y+40}" font-family="{FONT}" font-size="30" font-weight="700" fill="{t["accent"]}">{esc(num)}</text>'
-            f'<text x="{x+18}" y="{y+66}" font-family="{FONT}" font-size="16" fill="{t["muted"]}">{esc(label)}</text>'
-        )
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-labelledby="t d">
-<title id="t">Đỗ Quốc Hoàng, Senior Backend Engineer</title>
-<desc id="d">Java, Go, distributed systems. 1.6M+ metered customers, 5+ years in production, search latency from seconds to milliseconds, 50-vehicle EV pilot.</desc>
-<rect width="1000" height="300" rx="16" fill="{t["bg"]}" stroke="{t["border"]}"/>
-<rect x="40" y="44" width="6" height="104" rx="3" fill="{t["accent"]}"/>
-<text x="66" y="92" font-family="{FONT}" font-size="46" font-weight="700" fill="{t["fg"]}">Đỗ Quốc Hoàng</text>
-<text x="66" y="132" font-family="{FONT}" font-size="22" fill="{t["fg"]}">Senior Backend Engineer · Java · Go · Distributed Systems</text>
-<text x="960" y="70" text-anchor="end" font-family="{MONO}" font-size="15" fill="{t["muted"]}">Ho Chi Minh City · UTC+7</text>
-<text x="960" y="96" text-anchor="end" font-family="{MONO}" font-size="15" fill="{t["accent2"]}">● open to remote &amp; freelance</text>
-{"".join(tiles)}
-</svg>
-'''
-
-
-def box(t, x, y, w, h, title, sub="", strong=False, ts=17, ss=13):
-    stroke = t["accent"] if strong else t["border"]
-    sw = 2 if strong else 1
-    s = (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{t["card"]}" stroke="{stroke}" stroke-width="{sw}"/>'
-         f'<text x="{x+w/2}" y="{y+(h/2 - (8 if sub else -6))}" text-anchor="middle" font-family="{FONT}" font-size="{ts}" font-weight="600" fill="{t["fg"]}">{esc(title)}</text>')
-    if sub:
-        s += f'<text x="{x+w/2}" y="{y+h/2+16}" text-anchor="middle" font-family="{MONO}" font-size="{ss}" fill="{t["muted"]}">{esc(sub)}</text>'
-    return s
-
-
-def arrow(t, x1, y1, x2, y2, label="", place="above", fs=12):
-    s = f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{t["line"]}" stroke-width="2" marker-end="url(#a)"/>'
-    if label:
-        mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        if place == "above":  # horizontal arrow: centered above the line
-            x, y, anchor = mx, my - 8, "middle"
-        elif place == "wedge-up":  # rising diagonal: label in the gap below it
-            x, y, anchor = x1 + 52, my + 16, "start"
-        elif place == "wedge-down":  # falling diagonal, label in the gap above it
-            x, y, anchor = x1 + 52, my - 12, "start"
-        elif place == "left":  # vertical or diagonal arrow, label to its left
-            x, y, anchor = mx - 10, my + 5, "end"
-        else:  # "right"
-            x, y, anchor = mx + 10, my + 5, "start"
-        s += f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="{MONO}" font-size="{fs}" fill="{t["muted"]}">{esc(label)}</text>'
-    return s
-
-
-def frame(t, title, desc, body, h=260, w=1000):
+def terminal(lines, w, fs, lh, prompt, pad=24, step=0.06, pause=0.35, gap=0.12, start=0.5):
+    """lines: ("cmd", text) typed after the prompt, or ("out", [(text, color, bold), ...]) printed at once."""
+    cw, bar_h = fs * 0.6, 36
+    top = bar_h + lh + 2
+    h = top + lh * (len(lines) - 1) + 18
+    t, sched = start, []
+    for kind, body in lines:
+        if kind == "cmd":
+            sched.append((t, t + step * len(body)))
+            t += step * len(body) + pause
+        else:
+            sched.append((t, t))
+            t += gap
+    total = t
+    kt = lambda x: f"{x / total:.4f}"
+    anim = f'calcMode="discrete" dur="{total:.2f}s" fill="freeze"'
+    out = []
+    for i, ((kind, body), (t0, t1)) in enumerate(zip(lines, sched)):
+        y = top + i * lh
+        base = f'x="{pad}" y="{y}" font-family="{MONO}" font-size="{fs}" xml:space="preserve"'
+        if kind == "cmd":
+            pw = pad + (len(prompt) + 1) * cw
+            vals = [0] + [pw + k * cw for k in range(len(body) + 1)] + [w]
+            keys = [0] + [t0 + k * step for k in range(len(body) + 1)] + [t1 + 0.01]
+            out.append(
+                f'<clipPath id="c{i}"><rect x="0" y="{y - lh + 4}" width="{w}" height="{lh + 4}">'
+                f'<animate attributeName="width" values="{";".join(f"{v:.1f}" for v in vals)}" '
+                f'keyTimes="{";".join(kt(k) for k in keys)}" {anim}/></rect></clipPath>'
+                f'<text {base} clip-path="url(#c{i})"><tspan fill="{T["green"]}" font-weight="700">{esc(prompt)}</tspan>'
+                f' <tspan fill="{T["fg"]}">{esc(body)}</tspan></text>')
+        else:
+            spans = "".join(f'<tspan fill="{T[c]}"' + (' font-weight="700"' if b else "") + f'>{esc(s)}</tspan>'
+                            for s, c, b in body)
+            out.append(f'<text {base}><animate attributeName="opacity" values="0;1" keyTimes="0;{kt(t0)}" {anim}/>'
+                       f'{spans}</text>')
+    cy = top + (len(lines) - 1) * lh
+    cx = pad + (len(prompt) + 1) * cw
+    cursor = (f'<rect x="{cx:.1f}" y="{cy - fs + 2}" width="{cw:.1f}" height="{fs + 3}" fill="{T["fg"]}">'
+              f'<set attributeName="opacity" to="0" begin="0s" dur="{total:.2f}s"/>'
+              f'<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" '
+              f'begin="{total:.2f}s" repeatCount="indefinite"/></rect>')
+    dots = "".join(f'<circle cx="{20 + k * 20}" cy="{bar_h / 2}" r="6" fill="{c}"/>'
+                   for k, c in enumerate(("#FF5F57", "#FEBC2E", "#28C840")))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t d">
-<title id="t">{esc(title)}</title>
-<desc id="d">{esc(desc)}</desc>
-<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="{t["line"]}"/></marker></defs>
-<rect width="{w}" height="{h}" rx="16" fill="{t["bg"]}" stroke="{t["border"]}"/>
-{body}
+<title id="t">{esc(TITLE)}</title>
+<desc id="d">{esc(DESC)}</desc>
+<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{T["win"]}" stroke="{T["border"]}"/>
+<path d="M1 {bar_h}V13A12 12 0 0 1 13 1H{w - 13}A12 12 0 0 1 {w - 1} 13V{bar_h}Z" fill="{T["bar"]}"/>
+<line x1="1" y1="{bar_h + 0.5}" x2="{w - 1}" y2="{bar_h + 0.5}" stroke="{T["border"]}"/>
+{dots}
+<text x="{w / 2}" y="{bar_h / 2 + 5}" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{T["muted"]}">hoang@hcmc: ~</text>
+{"".join(out)}
+{cursor}
 </svg>
 '''
 
 
-def billing(t):
-    b = []
-    b.append(box(t, 30, 95, 190, 70, "Utility subsidiaries", "multiple tenants"))
-    b.append(arrow(t, 220, 130, 290, 130))
-    b.append(box(t, 290, 85, 230, 90, "Billing core", "multi-tenant · Java", strong=True))
-    b.append(arrow(t, 520, 130, 590, 130, "events"))
-    b.append(box(t, 590, 95, 150, 70, "Kafka", "event pipelines"))
-    b.append(arrow(t, 740, 130, 800, 70))
-    b.append(box(t, 800, 30, 170, 76, "Elasticsearch", "search: s → ms"))
-    b.append(arrow(t, 740, 130, 800, 190))
-    b.append(box(t, 800, 154, 170, 76, "Fintech gateway", "VietQR · JWE/JWS"))
-    b.append(f'<text x="30" y="40" font-family="{FONT}" font-size="15" font-weight="600" fill="{t["accent"]}">1.6M+ metered customers</text>')
-    return frame(t, "Multi-tenant water-utility billing architecture",
-                 "Utility subsidiaries feed a multi-tenant billing core, which publishes events to Kafka pipelines that feed an Elasticsearch search layer and a secure VietQR payment gateway.",
-                 "".join(b))
+def ok(tag, num, rest):
+    seg = [("[", "muted", False), ("OK", "green", True), ("] ", "muted", False)]
+    if tag:
+        seg.append((tag, "cyan", False))
+    return ("out", seg + [(num, "orange", True), (rest, "fg", False)])
 
 
-def fleet(t):
-    b = []
-    b.append(box(t, 30, 95, 170, 70, "EV fleet", "IoT devices"))
-    b.append(arrow(t, 200, 130, 270, 130, "MQTT"))
-    b.append(box(t, 270, 95, 150, 70, "EMQX", "broker"))
-    b.append(arrow(t, 420, 130, 480, 130))
-    b.append(box(t, 480, 85, 220, 90, "Go / Gin backend", "feature-based clean arch", strong=True))
-    b.append(arrow(t, 700, 130, 790, 70, "WebSocket", "wedge-up"))
-    b.append(box(t, 790, 30, 180, 76, "Ops dashboards", "React · Vue"))
-    b.append(arrow(t, 700, 130, 790, 190, "REST", "wedge-down"))
-    b.append(box(t, 790, 154, 180, 76, "Rider app", "Flutter"))
-    b.append(f'<text x="30" y="40" font-family="{FONT}" font-size="15" font-weight="600" fill="{t["accent"]}">Real-time tracking · 50-vehicle pilot</text>')
-    return frame(t, "EV-rental CRM and IoT fleet platform architecture",
-                 "EV fleet devices publish over MQTT to an EMQX broker consumed by a Go Gin backend, which streams live vehicle state to React and Vue dashboards over WebSockets and serves a Flutter app.",
-                 "".join(b))
+DESKTOP = [
+    ("cmd", "whoami"),
+    ("out", [("Đỗ Quốc Hoàng", "fg", True), ("  Senior Backend Engineer · Java · Go · distributed systems", "muted", False)]),
+    ("cmd", "cat impact.log"),
+    ok("billing  ", "1.6M+", " metered customers on a multi-tenant billing core"),
+    ok("search   ", "seconds → ms", " search latency with Kafka + Elasticsearch"),
+    ok("fleet    ", "50", "-vehicle EV pilot, real-time IoT tracking in Go"),
+    ok("prod     ", "5+", " years shipping systems to production"),
+    ("cmd", "echo $STATUS"),
+    ("out", [("● ", "orange", False), ("open to remote & freelance backend roles", "fg", False),
+             ("  Ho Chi Minh City, UTC+7", "muted", False)]),
+    ("cmd", ""),
+]
 
+# Mobile: 400 units wide, GitHub scales it to ~358px on a 390px phone, so 13-unit text renders at ~11.6px.
+MOBILE = [
+    ("cmd", "whoami"),
+    ("out", [("Đỗ Quốc Hoàng", "fg", True)]),
+    ("out", [("Senior Backend Engineer · Java · Go", "muted", False)]),
+    ("cmd", "cat impact.log"),
+    ok("", "1.6M+", " metered customers, billing"),
+    ok("", "s → ms", " search latency, Kafka + ES"),
+    ok("", "50", "-vehicle EV pilot, IoT in Go"),
+    ok("", "5+", " years in production"),
+    ("cmd", "echo $STATUS"),
+    ("out", [("● ", "orange", False), ("open to remote & freelance", "fg", False)]),
+    ("cmd", ""),
+]
 
-# Mobile variants: 400 units wide so text stays >= ~11.5px when GitHub scales them to ~358px on a 390px phone.
-MW = 400
-
-
-def banner_mobile(t: dict) -> str:
-    stats = [("1.6M+", "metered customers"), ("5+ yrs", "in production"),
-             ("s → ms", "search latency"), ("50", "EV pilot fleet")]
-    pad, gap, th, y0 = 20, 12, 72, 196
-    tw = (MW - 2 * pad - gap) / 2
-    tiles = []
-    for i, (num, label) in enumerate(stats):
-        x, y = pad + (i % 2) * (tw + gap), y0 + (i // 2) * (th + gap)
-        tiles.append(
-            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{t["card"]}" stroke="{t["border"]}"/>'
-            f'<text x="{x+14}" y="{y+32}" font-family="{FONT}" font-size="24" font-weight="700" fill="{t["accent"]}">{esc(num)}</text>'
-            f'<text x="{x+14}" y="{y+56}" font-family="{FONT}" font-size="14" fill="{t["muted"]}">{esc(label)}</text>'
-        )
-    h = y0 + 2 * th + gap + pad
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{MW}" height="{h}" viewBox="0 0 {MW} {h}" role="img" aria-labelledby="t d">
-<title id="t">Đỗ Quốc Hoàng, Senior Backend Engineer</title>
-<desc id="d">Java, Go, distributed systems. 1.6M+ metered customers, 5+ years in production, search latency from seconds to milliseconds, 50-vehicle EV pilot.</desc>
-<rect width="{MW}" height="{h}" rx="16" fill="{t["bg"]}" stroke="{t["border"]}"/>
-<rect x="20" y="30" width="5" height="88" rx="2.5" fill="{t["accent"]}"/>
-<text x="38" y="62" font-family="{FONT}" font-size="34" font-weight="700" fill="{t["fg"]}">Đỗ Quốc Hoàng</text>
-<text x="38" y="92" font-family="{FONT}" font-size="18" fill="{t["fg"]}">Senior Backend Engineer</text>
-<text x="38" y="115" font-family="{FONT}" font-size="16" fill="{t["fg"]}">Java · Go · Distributed Systems</text>
-<text x="20" y="152" font-family="{MONO}" font-size="13" fill="{t["muted"]}">Ho Chi Minh City · UTC+7</text>
-<text x="20" y="174" font-family="{MONO}" font-size="13" fill="{t["accent2"]}">● open to remote &amp; freelance</text>
-{"".join(tiles)}
-</svg>
-'''
-
-
-def vflow(t, title, desc, header, chain, split):
-    """Vertical diagram: chain of (title, sub, strong, arrow_label) boxes, then a two-way split."""
-    bw, bh, gap = 260, 58, 36
-    bx, cx = (MW - bw) / 2, MW / 2
-    b = [f'<text x="20" y="32" font-family="{FONT}" font-size="15" font-weight="600" fill="{t["accent"]}">{esc(header)}</text>']
-    y = 50
-    for i, (ti, su, st, lab) in enumerate(chain):
-        if i:
-            b.append(arrow(t, cx, y - gap, cx, y, lab, "right", fs=13))
-        b.append(box(t, bx, y, bw, bh + (8 if st else 0), ti, su, st, ts=16, ss=13))
-        y += bh + (8 if st else 0) + gap
-    top, sw, sh = y - gap, 172, 62
-    y += 20  # taller fork so split labels sit clear of the diagonal arrows
-    for k, (ti, su, lab) in enumerate(split):
-        sx = 20 if k == 0 else MW - 20 - sw
-        b.append(arrow(t, cx, top, sx + sw / 2, y))
-        if lab:
-            lx = cx - 22 if k == 0 else cx + 22
-            ly = top + (y - top) / 2 + 5
-            anchor = "end" if k == 0 else "start"
-            b.append(f'<text x="{lx}" y="{ly}" text-anchor="{anchor}" font-family="{MONO}" font-size="13" '
-                     f'fill="{t["muted"]}" paint-order="stroke" stroke="{t["bg"]}" stroke-width="5">{esc(lab)}</text>')
-        b.append(box(t, sx, y, sw, sh, ti, su, ts=16, ss=13))
-    return frame(t, title, desc, "".join(b), h=y + sh + 20, w=MW)
-
-
-def billing_mobile(t):
-    return vflow(t, "Multi-tenant water-utility billing architecture",
-                 "Utility subsidiaries feed a multi-tenant billing core, which publishes events to Kafka pipelines that feed an Elasticsearch search layer and a secure VietQR payment gateway.",
-                 "1.6M+ metered customers",
-                 [("Utility subsidiaries", "multiple tenants", False, ""),
-                  ("Billing core", "multi-tenant · Java", True, ""),
-                  ("Kafka", "event pipelines", False, "events")],
-                 [("Elasticsearch", "search: s → ms", ""), ("Fintech gateway", "VietQR · JWE/JWS", "")])
-
-
-def fleet_mobile(t):
-    return vflow(t, "EV-rental CRM and IoT fleet platform architecture",
-                 "EV fleet devices publish over MQTT to an EMQX broker consumed by a Go Gin backend, which streams live vehicle state to React and Vue dashboards over WebSockets and serves a Flutter app.",
-                 "Real-time tracking · 50-vehicle pilot",
-                 [("EV fleet", "IoT devices", False, ""),
-                  ("EMQX", "broker", False, "MQTT"),
-                  ("Go / Gin backend", "feature-based clean arch", True, "")],
-                 [("Ops dashboards", "React · Vue", "WebSocket"), ("Rider app", "Flutter", "REST")])
-
-
-for name, t in THEMES.items():
-    (OUT / f"banner-{name}.svg").write_text(banner(t), encoding="utf-8")
-    (OUT / f"billing-{name}.svg").write_text(billing(t), encoding="utf-8")
-    (OUT / f"fleet-{name}.svg").write_text(fleet(t), encoding="utf-8")
-    (OUT / f"banner-mobile-{name}.svg").write_text(banner_mobile(t), encoding="utf-8")
-    (OUT / f"billing-mobile-{name}.svg").write_text(billing_mobile(t), encoding="utf-8")
-    (OUT / f"fleet-mobile-{name}.svg").write_text(fleet_mobile(t), encoding="utf-8")
+(OUT / "terminal.svg").write_text(terminal(DESKTOP, 1000, 18, 30, "hoang@hcmc:~$"), encoding="utf-8")
+(OUT / "terminal-mobile.svg").write_text(terminal(MOBILE, 400, 13, 22, "~$", pad=16), encoding="utf-8")
 print("written:", sorted(p.name for p in OUT.iterdir()))
 
 
-def lum(h):
-    c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+def lum(hx):
+    c = [int(hx[i:i + 2], 16) / 255 for i in (1, 3, 5)]
     c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
     return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
 
@@ -221,11 +135,7 @@ def cr(a, b):
     return (x + 0.05) / (y + 0.05)
 
 
-worst = 99
-for name, t in THEMES.items():
-    for fgk in ("fg", "muted", "accent", "accent2"):
-        for bgk in ("bg", "card"):
-            r = cr(t[fgk], t[bgk])
-            worst = min(worst, r)
-            print(f"{name:5} {fgk:7} on {bgk:4}: {r:5.2f}:1 {'OK' if r >= 4.5 else 'FAIL'}")
-print(f"worst contrast: {worst:.2f}:1")
+worst = min(cr(T[k], T["win"]) for k in ("fg", "muted", "green", "orange", "cyan"))
+for k in ("fg", "muted", "green", "orange", "cyan"):
+    print(f"{k:6} on win: {cr(T[k], T['win']):5.2f}:1")
+print(f"worst contrast: {worst:.2f}:1 {'OK' if worst >= 4.5 else 'FAIL'}")
